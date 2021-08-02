@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="5">
+ <tileset firstgid="1" name="kenny_pirate" tilewidth="64" tileheight="64" tilecount="96" columns="16">
+  <image source="../tilesets/kenny_pirate.png" width="1024" height="384"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="15" height="15">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,7,8,9,0,0,0,0,0,6,7,8,9,0,
+0,22,23,24,25,0,0,0,0,0,22,23,24,25,0,
+0,38,39,40,41,0,0,0,0,0,38,39,40,41,0,
+0,54,55,56,57,0,0,0,0,0,54,55,56,57,0,
+0,0,0,0,0,0,6,7,8,9,0,0,0,0,0,
+0,0,0,0,0,0,22,23,24,25,0,0,0,0,0,
+0,0,0,0,0,0,38,39,40,41,0,0,0,0,0,
+0,0,0,0,0,0,54,55,56,57,0,0,0,0,0,
+0,6,7,8,9,0,0,0,0,0,6,7,8,9,0,
+0,22,23,24,25,0,0,0,0,0,22,23,24,25,0,
+0,38,39,40,41,0,0,0,0,0,38,39,40,41,0,
+0,54,55,56,57,0,0,0,0,0,54,55,56,57,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="1" name="Rectangle" x="71.5945" y="71.5945" width="237.322" height="237.322"/>
+  <object id="2" name="Point" x="190.919" y="192.244">
+   <point/>
+  </object>
+  <object id="3" name="Ellipse" x="369.905" y="307.591" width="286.378" height="269.142">
+   <ellipse/>
+  </object>
+  <object id="4" name="Polyline" x="396.421" y="125.953">
+   <polygon points="0,0 267.816,37.1231 90.156,82.2011 -14.5841,70.2687 50.3813,42.4264"/>
+  </object>
+ </objectgroup>
+</map>
