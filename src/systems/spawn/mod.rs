@@ -7,7 +7,10 @@ mod objects;
 pub use self::objects::load_tiled_objects;
 
 mod utils;
-pub use self::utils::{get_tileset, build_texture_atlas, merge_paths};
+pub use self::utils::{
+    get_tileset, build_texture_atlas, merge_paths,
+    get_grid_topology
+};
 
 pub const Z_SEPERATION: f32 = 100.0;
 
@@ -57,6 +60,7 @@ pub fn spawn_tilemap(
                         let atlas_handle = atlases.add(atlas);
                         let mut tilemap = Tilemap::builder()
                             .dimensions(map.map.width, map.map.height)
+                            .topology(get_grid_topology(&map.map))
                             .chunk_dimensions(map.map.tile_width, map.map.tile_height, 1)
                             .texture_dimensions(map.map.tile_width, map.map.tile_height)
                             .texture_atlas(atlas_handle.clone())

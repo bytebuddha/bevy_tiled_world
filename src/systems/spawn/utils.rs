@@ -1,8 +1,18 @@
 use bevy::prelude::*;
+use bevy_tilemap::prelude::*;
 
 use std::path::PathBuf;
 
 use crate::Map;
+
+pub fn get_grid_topology(map: &tiled::Map) -> GridTopology {
+    match map.orientation {
+        tiled::Orientation::Orthogonal => GridTopology::Square,
+        tiled::Orientation::Hexagonal => GridTopology::HexEvenCols,
+        tiled::Orientation::Isometric => GridTopology::Square,
+        tiled::Orientation::Staggered => GridTopology::Square
+    }
+}
 
 pub fn get_tileset<'a>(map: &'a Map, layer: &tiled::Layer) -> &'a tiled::Tileset {
     match &layer.tiles {
