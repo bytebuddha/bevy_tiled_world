@@ -15,16 +15,11 @@ pub fn load_tiled_objects(parent: &mut ChildBuilder, map: &tiled::Map) {
                     object_entity(&mut parent.spawn(), map, object);
 
                     #[cfg(feature = "rapier")]
-                    if object_group.name == "Colliders" {
-                        super::rapier::spawn_collider(&mut parent.spawn(), map, object);
-                    } else {
-                        super::rapier::spawn_rapier_object(
-                            object_entity(&mut parent.spawn(), map, object),
-                            map,
-                            object
-                        );
-
-                    }
+                    super::rapier::spawn_rapier_object(
+                        object_entity(&mut parent.spawn(), map, object),
+                        map,
+                        object
+                    );
                 }
             });
     }

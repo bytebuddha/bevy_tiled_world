@@ -63,7 +63,10 @@ fn get_collider_shape(object: &Object, map: &tiled::Map) -> Option<ColliderShape
             let points = points
                 .iter()
                 .map(|(x, y)| {
-                    Point::new(*x, map.height as f32 - *y)
+                    Point::new(
+                        x + map.tile_width as f32 / 2.0,
+                        map.height as f32 *map.tile_height as f32 - y + map.tile_height as f32 / 2.0
+                    )
                 })
                 .collect::<Vec<Point<f32>>>();
             Some(ColliderShape::polyline(points, None))
