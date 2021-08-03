@@ -6,6 +6,9 @@ use crate::{Map, MapBundle, MapIndex, ActiveMap, entities::TiledWorld};
 mod objects;
 pub use self::objects::load_tiled_objects;
 
+#[cfg(feature = "rapier")]
+mod rapier;
+
 mod utils;
 pub use self::utils::{
     get_tileset, build_texture_atlas, merge_paths,
