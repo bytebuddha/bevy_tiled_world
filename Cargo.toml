@@ -11,4 +11,4 @@ bevy = { version = "0.5.0", default-features = false }
 
 [dev-dependencies]
 bevy = "0.5.0"
-bevy_devtools = { git = "https://github.com/Bytebuddha/bevy_devtools" } 
+bevy_devtools = { git = "https://github.com/Bytebuddha/bevy_devtools" }
