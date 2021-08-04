@@ -61,11 +61,11 @@
 </data>
  </layer>
  <objectgroup id="3" name="Colliders">
-  <object id="1" name="Island" x="192" y="256">
+  <object id="1" name="Island" type="Collider" x="192" y="256">
    <polygon points="0,0 256,0 256,-128 512,-128 512,192 576,192 576,448 320,448 320,320 256,320 256,448 0,448"/>
   </object>
-  <object id="2" name="Large Tree" x="448" y="384" width="64" height="64"/>
-  <object id="3" name="Small Tree" x="512" y="192" width="64" height="64">
+  <object id="2" name="Large Tree" type="Collider" x="448" y="384" width="64" height="64"/>
+  <object id="3" name="Small Tree" type="Collider" x="512" y="192" width="64" height="64">
    <ellipse/>
   </object>
  </objectgroup>

@@ -1,17 +1,13 @@
 use bevy::prelude::*;
 
 use crate::{
-    Map, ChangeMap,
-    systems::{
-        spawn_tilemap, spawn_world,
-        handle_map_change
-    }
+    systems::{handle_map_change, spawn_tilemap, spawn_world},
+    ChangeMap, Map,
 };
 
 pub struct TiledWorldPlugin;
 
 impl Plugin for TiledWorldPlugin {
-
     fn build(&self, app: &mut AppBuilder) {
         app.add_asset::<Map>()
             .add_asset_loader(crate::asset::TiledMapLoader)

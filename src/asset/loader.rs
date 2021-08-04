@@ -1,5 +1,5 @@
+use bevy::asset::{AssetLoader, AssetPath, LoadContext, LoadedAsset};
 use bevy::utils::BoxedFuture;
-use bevy::asset::{AssetPath, LoadedAsset, LoadContext, AssetLoader};
 
 use super::Map;
 

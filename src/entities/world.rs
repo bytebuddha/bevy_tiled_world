@@ -14,5 +14,5 @@ pub struct ChangeMap(pub usize);
 #[derive(Bundle, Default)]
 pub struct WorldBundle {
     pub active: ActiveMap,
-    pub maps: Vec<Handle<Map>>
+    pub maps: Vec<Handle<Map>>,
 }

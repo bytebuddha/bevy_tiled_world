@@ -13,10 +13,7 @@ fn main() {
         .run()
 }
 
-fn spawn_scene(
-    mut commands: Commands,
-    assets: Res<AssetServer>
-) {
+fn spawn_scene(mut commands: Commands, assets: Res<AssetServer>) {
     commands.spawn_bundle(OrthographicCameraBundle::new_2d());
     commands.spawn_bundle(MapBundle {
         map: assets.load("maps/objects.tmx"),

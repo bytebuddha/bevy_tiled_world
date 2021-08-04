@@ -1,5 +1,5 @@
-use bevy::prelude::*;
 use bevy::app::Events;
+use bevy::prelude::*;
 use bevy_tiled_world::*;
 
 mod utils;
@@ -15,24 +15,15 @@ fn main() {
         .run()
 }
 
-fn spawn_scene(
-    mut commands: Commands,
-    assets: Res<AssetServer>
-) {
+fn spawn_scene(mut commands: Commands, assets: Res<AssetServer>) {
     commands.spawn_bundle(OrthographicCameraBundle::new_2d());
     commands.spawn_bundle(WorldBundle {
-        maps: vec![
-            assets.load("maps/basic.tmx"),
-            assets.load("maps/tiny.tmx")
-        ],
+        maps: vec![assets.load("maps/basic.tmx"), assets.load("maps/tiny.tmx")],
         ..Default::default()
     });
 }
 
-pub fn change_map(
-    keys: Res<Input<KeyCode>>,
-    mut events: ResMut<Events<ChangeMap>>
-) {
+pub fn change_map(keys: Res<Input<KeyCode>>, mut events: ResMut<Events<ChangeMap>>) {
     if keys.just_pressed(KeyCode::F1) {
         events.send(ChangeMap(0));
     }
