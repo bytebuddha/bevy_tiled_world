@@ -98,6 +98,37 @@ pub fn draw_colliders(
                     0.0,
                     Color::RED,
                 );
+            },
+            TypedShape::Ball(_) =>  {
+                lines.line_colored(
+                    Vec3::new(
+                        position.translation.x - 6.0,
+                        position.translation.y - 6.0,
+                        10.0,
+                    ),
+                    Vec3::new(
+                        position.translation.x + 6.0,
+                        position.translation.y + 6.0,
+                        10.0,
+                    ),
+                    0.0,
+                    Color::RED,
+                );
+
+                lines.line_colored(
+                    Vec3::new(
+                        position.translation.x + 6.0,
+                        position.translation.y - 6.0,
+                        10.0,
+                    ),
+                    Vec3::new(
+                        position.translation.x - 6.0,
+                        position.translation.y + 6.0,
+                        10.0,
+                    ),
+                    0.0,
+                    Color::RED,
+                );
             }
             _ => {}
         }
