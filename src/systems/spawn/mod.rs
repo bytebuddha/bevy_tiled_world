@@ -107,7 +107,7 @@ pub fn spawn_tilemap(
     }
 }
 
-fn import_tiles(map: &tiled::Map, tiles: &tiled::LayerData) -> Vec<Tile<(usize, usize)>> {
+fn import_tiles(map: &tiled::Map, tiles: &tiled::LayerData) -> Vec<Tile<(i32, i32)>> {
     let mut out_tiles = vec![];
     match tiles {
         tiled::LayerData::Finite(value) => {
@@ -116,7 +116,7 @@ fn import_tiles(map: &tiled::Map, tiles: &tiled::LayerData) -> Vec<Tile<(usize, 
                     if tile.gid > 0 {
                         if let Some(tileset) = map.get_tileset_by_gid(tile.gid) {
                             out_tiles.push(Tile {
-                                point: (chunk_y, map.height as usize - chunk_x).into(),
+                                point: (chunk_y as i32, map.height as i32 - chunk_x as i32).into(),
                                 sprite_index: tile.gid as usize - tileset.first_gid as usize,
                                 ..Default::default()
                             });
@@ -125,8 +125,20 @@ fn import_tiles(map: &tiled::Map, tiles: &tiled::LayerData) -> Vec<Tile<(usize, 
                 }
             }
         }
-        tiled::LayerData::Infinite(_data) => {
-            warn!("Infinite Maps are not supported yet");
+        tiled::LayerData::Infinite(data) => {
+            for ((y, x), chunk) in data.iter() {
+                for (chunk_x, row) in chunk.tiles.iter().enumerate() {
+                    for (chunk_y, tile) in row.iter().enumerate() {
+                        if let Some(tileset) = map.get_tileset_by_gid(tile.gid) {
+                            out_tiles.push(Tile {
+                                point: (*y + chunk_y as i32, -(chunk_x as i32 + *x)).into(),
+                                sprite_index: tile.gid as usize - tileset.first_gid as usize,
+                                ..Default::default()
+                            });
+                        }
+                    }
+                }
+            }
         }
     }
     out_tiles
