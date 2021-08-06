@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 mod camera;
 pub use self::camera::move_camera;
 

@@ -12,7 +12,7 @@ mod rapier;
 mod utils;
 pub use self::utils::{build_texture_atlas, get_grid_topology, get_tileset, merge_paths};
 
-pub const Z_SEPERATION: f32 = 100.0;
+pub const Z_SEPERATION: f32 = 1.0;
 
 pub fn spawn_world(
     mut commands: Commands,

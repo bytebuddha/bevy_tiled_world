@@ -1,3 +1,4 @@
+pub extern crate tiled;
 pub mod systems;
 
 pub mod entities;
