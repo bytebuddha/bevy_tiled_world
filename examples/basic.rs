@@ -7,7 +7,7 @@ fn main() {
     App::build()
         .add_plugins(DefaultPlugins)
         .add_plugin(TiledWorldPlugin)
-        .add_plugin(bevy_devtools::DevToolsPlugin::default())
+        .add_plugin(bevy_devtools::DevToolsPlugin)
         .add_startup_system(spawn_scene.system())
         .add_system(utils::move_camera.system())
         .run()

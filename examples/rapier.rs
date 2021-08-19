@@ -12,7 +12,7 @@ fn main() {
         .add_plugin(TiledWorldPlugin)
         .add_plugin(bevy_prototype_debug_lines::DebugLinesPlugin)
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::default())
-        .add_plugin(bevy_devtools::DevToolsPlugin::default())
+        .add_plugin(bevy_devtools::DevToolsPlugin)
         .add_startup_system(spawn_scene.system())
         .add_system(utils::move_camera.system())
         .add_system(utils::colliders::draw_colliders.system())
